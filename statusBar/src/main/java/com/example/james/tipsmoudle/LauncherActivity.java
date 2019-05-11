@@ -13,8 +13,8 @@ public class LauncherActivity extends AppCompatActivity {
 		setContentView(R.layout.activity_launcher);
 	}
 
-	public void complete(View view) {
-		launcher(ImmersiveCompleteActivity.class);
+	public void statusBarcomplete(View view) {
+		launcher(StatusBarCompleteActivity.class);
 	}
 
 	private void launcher(Class  clazz) {
@@ -22,7 +22,16 @@ public class LauncherActivity extends AppCompatActivity {
 		startActivity(intent);
 	}
 
-	public void noComplete(View view) {
-		launcher(ImmersiveELMaActivity.class);
+	public void statusBarElMa(View view) {
+		launcher(StatusBarELMaActivity.class);
+	}
+	public void statusBarNavBarcomplete(View view) {
+		launcher(StatusBarAndNavBarCompleteActivity.class);
+	}
+	public void statusBarNavBarElMa(View view) {
+		launcher(StatusBarAndNavELMaActivity.class);
+	}
+	public void after19statusBarNavBarComplete(View view) {
+		launcher(After19StatusBarAndNavCompleteActivity.class);
 	}
 }

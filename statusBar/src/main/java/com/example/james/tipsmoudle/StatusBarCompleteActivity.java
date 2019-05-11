@@ -5,7 +5,7 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
-public class ImmersiveCompleteActivity extends AppCompatActivity {
+public class StatusBarCompleteActivity extends AppCompatActivity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

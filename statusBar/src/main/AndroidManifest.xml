@@ -9,10 +9,10 @@
 		android:roundIcon="@mipmap/ic_launcher_round"
 		android:supportsRtl="true"
 		android:theme="@style/AppTheme">
-		<activity android:name=".ImmersiveCompleteActivity">
+		<activity android:name=".StatusBarCompleteActivity">
 
 		</activity>
-		<activity android:name=".ImmersiveELMaActivity"/>
+		<activity android:name=".StatusBarELMaActivity"/>
 		<activity android:name=".LauncherActivity">
 			<intent-filter>
 				<action android:name="android.intent.action.MAIN"/>
@@ -20,6 +20,9 @@
 				<category android:name="android.intent.category.LAUNCHER"/>
 			</intent-filter>
 		</activity>
+		<activity android:name=".StatusBarAndNavBarCompleteActivity"></activity>
+		<activity android:name=".StatusBarAndNavELMaActivity"></activity>
+		<activity android:name=".After19StatusBarAndNavCompleteActivity"></activity>
 	</application>
 
 </manifest>
