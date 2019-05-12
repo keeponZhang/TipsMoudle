@@ -9,8 +9,11 @@
 		android:roundIcon="@mipmap/ic_launcher_round"
 		android:supportsRtl="true"
 		android:theme="@style/AppTheme">
+		<!--android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen"-->
+		<activity android:name=".FlagActivity"
+		         >
+		</activity>
 		<activity android:name=".StatusBarCompleteActivity">
-
 		</activity>
 		<activity android:name=".StatusBarELMaActivity"/>
 		<activity android:name=".LauncherActivity">
@@ -20,9 +23,11 @@
 				<category android:name="android.intent.category.LAUNCHER"/>
 			</intent-filter>
 		</activity>
-		<activity android:name=".StatusBarAndNavBarCompleteActivity"></activity>
-		<activity android:name=".StatusBarAndNavELMaActivity"></activity>
-		<activity android:name=".After19StatusBarAndNavCompleteActivity"></activity>
+		<activity android:name=".StatusBarAndNavBarCompleteActivity"/>
+		<activity android:name=".StatusBarAndNavELMaActivity"/>
+		<activity android:name=".After19StatusBarAndNavCompleteActivity"/>
+
+
 	</application>
 
 </manifest>

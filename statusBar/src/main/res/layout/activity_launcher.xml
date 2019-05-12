@@ -37,4 +37,10 @@
 		android:layout_height="wrap_content"
 		android:onClick="after19statusBarNavBarComplete"
 		android:text="after19statusBarNavBarComplete"/>
+	<Button
+		android:textAllCaps="false"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:onClick="flag"
+		android:text="flag"/>
 </LinearLayout>

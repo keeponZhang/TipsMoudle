@@ -22,7 +22,7 @@ public class StatusBarELMaActivity extends AppCompatActivity {
 					| View.SYSTEM_UI_FLAG_LAYOUT_STABLE;
 			decorView.setSystemUiVisibility(option);
 			//大于21才能调用
-		getWindow().setStatusBarColor(Color.TRANSPARENT);
+			getWindow().setStatusBarColor(Color.TRANSPARENT);
 		}
 		ActionBar actionBar = getSupportActionBar();
 		actionBar.hide();

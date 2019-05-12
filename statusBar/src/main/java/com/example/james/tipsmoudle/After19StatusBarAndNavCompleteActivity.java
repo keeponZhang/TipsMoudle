@@ -26,6 +26,8 @@ public class After19StatusBarAndNavCompleteActivity extends AppCompatActivity {
 							//SYSTEM_UI_FLAG_HIDE_NAVIGATION将状态栏异常
 							| View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
 							| View.SYSTEM_UI_FLAG_FULLSCREEN
+//							| View.SYSTEM_UI_FLAG_IMMERSIVE
+//SYSTEM_UI_FLAG_IMMERSIVE_STICKY如果用户没有进行操作，系统栏会在一段时间内自动隐藏。
 							| View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
 		}
 	}
