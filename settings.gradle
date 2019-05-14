@@ -1,1 +1,2 @@
 include ':statusBar'
+include ':amm_sdk_sample'
