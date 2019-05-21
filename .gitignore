@@ -10,3 +10,4 @@
 /captures
 .externalNativeBuild
 amm_sdk_sample/build
+.idea/
