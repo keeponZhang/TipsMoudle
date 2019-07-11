@@ -15,7 +15,7 @@ public class FlagActivity extends AppCompatActivity {
 		super.onCreate(savedInstanceState);
 
 //		setTheme(R.style.windowActionBarOverlayThreme);
-		setContentView(R.layout.activity_flag2);
+//		setContentView(R.layout.activity_flag2);
 //		windowActionBarOverlayThreme();
 
 
@@ -33,8 +33,8 @@ public class FlagActivity extends AppCompatActivity {
 		//只有将statusbar设为透明，或者界面设为全屏显示（设置View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN flag)时，fitsSystemWindows才会起作用。不然statusbar的空间轮不到用户处理，这时会由ContentView的父控件处理，如果用HierarchyView 工具查看，将会看到，ContentView的父控件的paddingTop将会被设置。
 		//如果多个view同时设置了fitsSystemWindows，只有第一个会起作用。这是一般情况，后面会介绍特殊情况。
 		//		设置paddingTop只是fitsSystemWindows属性的默认行为
-		//		setContentView(R.layout.activity_flag);
-		//		translucent();
+				setContentView(R.layout.activity_flag);
+				translucent();
 	}
 
 	private void windowActionBarOverlayThreme() {

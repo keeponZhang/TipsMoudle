@@ -34,10 +34,12 @@ public class WXPayEntryActivity extends Activity implements IWXAPIEventHandler{
         
     	api = WXAPIFactory.createWXAPI(this, Constants.APP_ID);
         api.handleIntent(getIntent(), this);
+        Log.e("TAG", "WXPayEntryActivity onCreate:" );
     }
 
 	@Override
 	protected void onNewIntent(Intent intent) {
+    	Log.e("TAG", "WXPayEntryActivity onNewIntent:" );
 		super.onNewIntent(intent);
 		setIntent(intent);
         api.handleIntent(intent, this);
@@ -45,12 +47,13 @@ public class WXPayEntryActivity extends Activity implements IWXAPIEventHandler{
 
 	@Override
 	public void onReq(BaseReq req) {
+    	Log.e("TAG", "WXPayEntryActivity onReq:" );
 	}
 
 	@Override
 	public void onResp(BaseResp resp) {
 		Log.d(TAG, "onPayFinish, errCode = " + resp.errCode);
-
+		Log.e("TAG", "WXPayEntryActivity onResp resp.getType():"+resp.getType() );
 		if (resp.getType() == ConstantsAPI.COMMAND_PAY_BY_WX) {
 			AlertDialog.Builder builder = new AlertDialog.Builder(this);
 			builder.setTitle(R.string.app_tip);
