@@ -1,18 +1,20 @@
 package com.zhy.tree_view;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.zhang.nexuslibrary.NexusTestUtil;
 import com.zhy.bean.Bean;
 import com.zhy.bean.FileBean;
 import com.zhy.tree.bean.Node;
 import com.zhy.tree.bean.TreeListViewAdapter;
 import com.zhy.tree.bean.TreeListViewAdapter.OnTreeNodeClickListener;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends Activity
 {
@@ -26,7 +28,8 @@ public class MainActivity extends Activity
 	{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-
+		String string = NexusTestUtil.getString();
+		Log.e("TAG", "MainActivity onCreate:" + string);
 		initDatas();
 		mTree = (ListView) findViewById(R.id.id_tree);
 		try

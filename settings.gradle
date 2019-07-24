@@ -1,2 +1,2 @@
-include ':statusBar', ':tree_view_beta'
+include ':statusBar', ':tree_view_beta', ':nexuslibrary'
 include ':amm_sdk_sample'
