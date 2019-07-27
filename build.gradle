@@ -5,9 +5,7 @@ buildscript {
     repositories {
         google()
         jcenter()
-        maven {
-            url "http://172.16.18.63:8081/nexus/content/groups/public/"
-        }
+
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.2.0'
@@ -27,7 +25,55 @@ allprojects {
         }
     }
 }
+ext {
+    targetSdkVersion = 28
+    compileSdkVersion = 28
+    buildToolsVersion = "28.0.3"
+    minSdkVersion=16
 
+    androidSupportVersion = "28.0.0"
+    constraintLayoutVersion="1.1.3"
+    cpssdkVersion = '1.0.3'
+    educommonlibVersion = '1.0.27'
+    okHttpVersion = '2.7.5'
+    crashReportVersion = '1.0.23'
+    okHttp3Version = '3.12.0'
+    gsonVersion = '2.8.2'
+    rxJavaVersion = '1.1.0'
+    retrofitVersion = '1.6.0'
+    testRunnerVersion = '1.0.2'
+    espressoCoreVersion = '3.0.2'
+
+
+    //Libraries
+    daggerVersion = '2.0'
+    butterKnifeVersion = '8.8.1'
+    rxAndroidVersion = '1.1.0'
+    eventBusVersion = '2.4.0'
+    retrofit2Version = '2.6.0'
+    commonIOVersion = '2.4'
+    mqttVersion = '2.2.0'
+    wechatSdkVersion = '5.1.4'
+    glideVersion = '3.7.0'
+    subsamplingScaleImageViewVersion = '3.4.1'
+    yysdkVersion = '3.7.10'
+    alipaySDKVersion = '20160223'
+//    cpssdkVersion = '1.0.6'
+    hiidoStatisVersion = '3.4.6'
+    ebookVersion = '1.1.7'
+    ebookViewSDKVersion = '1.0.19'
+    qqOpenSdkVersion = 'V2.9'
+    hqdnsVersion = '1.0.27'
+    pushVersion = '1.0.27'
+    liveclassVersion = '1.14.16'
+    hqvlcplayerVersion = '1.0.5'
+//    crashReportVersion = '2.2.14'
+    scrollableVersion = '1.3.0'
+    //hq 5.4.1 tk6.1.4
+    umengVersion = '6.1.4'
+    ylogVersion = '1.0.28'
+
+}
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
