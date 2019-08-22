@@ -1,2 +1,2 @@
-include ':statusBar', ':tree_view_beta', ':nexuslibrary'
+include ':statusBar', ':tree_view_beta', ':nexuslibrary', ':constraintlayoutdemo'
 include ':amm_sdk_sample'

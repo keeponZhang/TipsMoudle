@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context=".ConstraintLayoutActivity">
+    <Button
+        android:id="@+id/buttonA"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="button A"
+        app:layout_constraintLeft_toLeftOf="parent" />
+    <!--当A控件设置Gone之后，B控件的margin属性是起作用的，即左边距还是30dp-->
+    <Button
+        android:id="@+id/buttonB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:text="button B"
+        app:layout_constraintLeft_toRightOf="@+id/buttonA" />
+
+</android.support.constraint.ConstraintLayout>

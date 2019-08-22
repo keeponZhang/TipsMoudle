@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context=".ConstraintLayoutActivity">
+    <!--当A控件设置 GONE之后，A控件相当于变成了一个点，B控件相对于对A的约束仍然是起作用的-->
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/tv1"
+        android:gravity="center"
+        android:text="text1"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="#612"
+         />
+    <TextView
+        app:layout_goneMarginLeft="50dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="text2"
+        android:layout_width="40dp"
+        android:layout_height="30dp"
+        android:background="#ff3"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/tv1"></TextView>
+
+</android.support.constraint.ConstraintLayout>
