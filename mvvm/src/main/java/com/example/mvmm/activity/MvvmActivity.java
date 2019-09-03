@@ -6,7 +6,10 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
+import com.example.mvmm.DemoApplication;
 import com.example.mvmm.R;
+import com.example.mvmm.component.ProductionComponent;
+import com.example.mvmm.component.TestComponent;
 import com.example.mvmm.databinding.ActivityMvvmBinding;
 
 public class MvvmActivity extends AppCompatActivity {
@@ -38,8 +41,13 @@ public class MvvmActivity extends AppCompatActivity {
             startActivity(new Intent(MvvmActivity.this, LambdaActivity.class));
         }
         public void onClickInjectDemo(View view) {
-            startActivity(new Intent(MvvmActivity.this, LambdaActivity.class));
-        }
+            if (DemoApplication.isTest) {
+                DataBindingUtil.setDefaultComponent(new ProductionComponent());
+            } else {
+                DataBindingUtil.setDefaultComponent(new TestComponent());
+            }
+            DemoApplication.isTest = !DemoApplication.isTest;
+            recreate();}
 
     }
 }
