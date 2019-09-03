@@ -1,6 +1,8 @@
 package com.example.mvmm.component;
 
 import android.databinding.BindingAdapter;
+import android.databinding.BindingConversion;
+import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.widget.ImageView;
 
@@ -21,5 +23,10 @@ public class DemoBindingAdapter {
                 .into(view);
     }
 
+
+    @BindingConversion
+    public static ColorDrawable convertColorToDrawable(int color) {
+        return new ColorDrawable(color);
+    }
 
 }
