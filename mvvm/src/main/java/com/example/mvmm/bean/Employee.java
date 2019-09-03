@@ -6,8 +6,7 @@ import android.databinding.ObservableArrayMap;
 import android.databinding.ObservableBoolean;
 
 import com.example.mvmm.BR;
-/**
- */
+
 public class Employee extends BaseObservable {
 
     private String mLastName;

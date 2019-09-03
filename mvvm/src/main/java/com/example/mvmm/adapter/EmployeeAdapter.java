@@ -16,10 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-/**
- * @author markzhai on 16/7/14
- * @version 1.3.0
- */
+
 public class EmployeeAdapter extends RecyclerView.Adapter<BindingViewHolder> {
 
     private static final int ITEM_VIEW_TYPE_ON = 1;
