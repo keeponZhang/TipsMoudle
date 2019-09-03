@@ -16,6 +16,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+        <!--现在可以直接使用@=（而不是@）来进行双向绑定了，使用起来十分简单-->
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
