@@ -30,8 +30,8 @@ public class MainActivity extends Activity
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		CrashReport.init(this, "12345678", "");
-		String string = NexusTestUtil.getString();
-		Log.e("TAG", "MainActivity onCreate:" + string);
+		// String string = NexusTestUtil.getString();
+		// Log.e("TAG", "MainActivity onCreate:" + string);
 		initDatas();
 		mTree = (ListView) findViewById(R.id.id_tree);
 		try

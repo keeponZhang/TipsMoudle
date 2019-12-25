@@ -32,6 +32,9 @@ public class StatusBarAndNavELMaActivity extends AppCompatActivity {
 		getWindow().setNavigationBarColor(Color.TRANSPARENT);
 		}
 		ActionBar actionBar = getSupportActionBar();
-		actionBar.hide();
+		if(actionBar!=null){
+			actionBar.hide();
+		}
+
 	}
 }

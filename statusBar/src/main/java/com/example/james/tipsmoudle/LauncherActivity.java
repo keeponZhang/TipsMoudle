@@ -6,7 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 public class LauncherActivity extends AppCompatActivity {
-
+	public static final String INTENT_FLAG_CHANGE = "INTENT_FLAG_CHANGE";
+	public static final String INTENT_FLAG_ISBELOW_FOUR = "INTENT_FLAG_ISBELOW_FOUR";
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -20,13 +21,20 @@ public class LauncherActivity extends AppCompatActivity {
 		launcher(StatusBarCompleteActivity.class);
 	}
 
-	private void launcher(Class  clazz) {
+	private void launcher(Class  clazz,boolean isChange) {
 		Intent intent = new Intent(this, clazz);
+		intent.putExtra(INTENT_FLAG_CHANGE, isChange);
 		startActivity(intent);
+	}
+	private void launcher(Class  clazz) {
+		launcher(clazz, false);
 	}
 
 	public void statusBarElMa(View view) {
 		launcher(StatusBarELMaActivity.class);
+	}
+	public void statusBarElMaFixWindow(View view) {
+		launcher(StatusBarELMaFixWindowActivity.class);
 	}
 	public void statusBarNavBarcomplete(View view) {
 		launcher(StatusBarAndNavBarCompleteActivity.class);
@@ -39,6 +47,36 @@ public class LauncherActivity extends AppCompatActivity {
 	}
 	public void flag(View view) {
 		launcher(FlagActivity.class);
+	}
+
+	public void beforedanhuanSystemBar(View view) {
+		launcher(淡化SystemBarActivity.class,false);
+	}
+
+	public void afterdanhuanSystemBar(View view) {
+		launcher(淡化SystemBarActivity.class,true);
+	}
+
+	public void beforeyingcangStatusBarlow4(View view) {
+		Intent intent = new Intent(this, 隐藏StatusBarBelowFourActivity.class);
+		intent.putExtra(INTENT_FLAG_CHANGE, false);
+		startActivity(intent);
+	}
+	public void afteryingcangStatusBarlow4(View view) {
+		Intent intent = new Intent(this, 隐藏StatusBarBelowFourActivity.class);
+		intent.putExtra(INTENT_FLAG_CHANGE, true);
+		startActivity(intent);
+	}
+
+	public void beforeyingcangStatusBarafter4(View view) {
+		Intent intent = new Intent(this, 隐藏StatusBarAfterFourActivity.class);
+		intent.putExtra(INTENT_FLAG_CHANGE, false);
+		startActivity(intent);
+	}
+	public void afteryingcangStatusBarafter4(View view) {
+		Intent intent = new Intent(this, 隐藏StatusBarAfterFourActivity.class);
+		intent.putExtra(INTENT_FLAG_CHANGE, true);
+		startActivity(intent);
 	}
 
 

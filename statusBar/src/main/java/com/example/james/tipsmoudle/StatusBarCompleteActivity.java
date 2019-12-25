@@ -20,7 +20,10 @@ public class StatusBarCompleteActivity extends AppCompatActivity {
 		int option = View.SYSTEM_UI_FLAG_FULLSCREEN;
 		decorView.setSystemUiVisibility(option);
 		ActionBar actionBar = getSupportActionBar();
-		actionBar.hide();
+		if(actionBar!=null){
+			actionBar.hide();
+		}
+
 	}
 
 	@Override
