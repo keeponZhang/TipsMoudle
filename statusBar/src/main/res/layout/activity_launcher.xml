@@ -18,18 +18,7 @@
             android:text="statusBarcomplete"
             android:textAllCaps="false" />
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="statusBarElMa"
-            android:text="statusBarElMa"
-            android:textAllCaps="false" />
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="statusBarElMaFixWindow"
-            android:text="statusBarElMaFixWindow"
-            android:textAllCaps="false" />
+
 
         <Button
             android:layout_width="wrap_content"
@@ -65,14 +54,16 @@
             android:orientation="horizontal">
 
             <Button
-                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:onClick="beforedanhuanSystemBar"
                 android:text="淡化SystemBar前"
                 android:textAllCaps="false" />
 
             <Button
-                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:onClick="afterdanhuanSystemBar"
                 android:text="淡化SystemBar后"
@@ -85,14 +76,16 @@
             android:orientation="horizontal">
 
             <Button
-                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:onClick="beforeyingcangStatusBarlow4"
                 android:text="隐藏StatusBarActivity4.0以前 前"
                 android:textAllCaps="false" />
 
             <Button
-                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:onClick="afteryingcangStatusBarlow4"
                 android:text="隐藏StatusBarActivity4.0以前 后"
@@ -104,17 +97,66 @@
             android:orientation="horizontal">
 
             <Button
-                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:onClick="beforeyingcangStatusBarafter4"
                 android:text="隐藏StatusBarActivity4.0以后 前"
                 android:textAllCaps="false" />
 
             <Button
-                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:onClick="afteryingcangStatusBarafter4"
                 android:text="隐藏StatusBarActivity4.0以后 后"
+                android:textAllCaps="false" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <Button
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:onClick="statusBarElMa"
+                android:text="statusBarElMa"
+                android:textAllCaps="false" />
+            <Button
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:onClick="statusBarElMaFixWindow"
+                android:text="statusBarElMaFixWindow"
+                android:textAllCaps="false" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <Button
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:onClick="statusBarWhiteElMa"
+                android:text="statusBarWhiteElMa"
+                android:textAllCaps="false" />
+            <Button
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:onClick="statusBarElMaWhiteFixWindow"
+                android:text="statusBarElMaWhiteFixWindow"
+                android:textAllCaps="false" />
+            <Button
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:onClick="statusBarElMaLightMode"
+                android:text="statusBarElMaLightMode"
                 android:textAllCaps="false" />
         </LinearLayout>
     </LinearLayout>

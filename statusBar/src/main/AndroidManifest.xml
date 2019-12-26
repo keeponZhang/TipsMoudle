@@ -12,8 +12,8 @@
         <!--android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen"-->
         <activity android:name=".FlagActivity"></activity>
         <activity android:name=".StatusBarCompleteActivity"></activity>
-        <activity android:name=".StatusBarELMaActivity" />
-        <activity android:name=".StatusBarELMaFixWindowActivity" />
+        <activity android:name=".StatusBarELMaTransparentActivity" />
+        <activity android:name=".StatusBarELMaWhiteActivity" />
         <activity android:name=".LauncherActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -14,6 +14,7 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
             <TextView
+                android:visibility="gone"
                 android:textColor="@color/window_background_color"
                 android:background="@android:color/black"
                 android:gravity="center"

@@ -7,7 +7,7 @@ import android.view.View;
 
 public class LauncherActivity extends AppCompatActivity {
 	public static final String INTENT_FLAG_CHANGE = "INTENT_FLAG_CHANGE";
-	public static final String INTENT_FLAG_ISBELOW_FOUR = "INTENT_FLAG_ISBELOW_FOUR";
+	public static final String INTENT_FLAG_SET_Light_Mode = "INTENT_FLAG_SET_Light_Mode";
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -31,11 +31,32 @@ public class LauncherActivity extends AppCompatActivity {
 	}
 
 	public void statusBarElMa(View view) {
-		launcher(StatusBarELMaActivity.class);
+		launcher(StatusBarELMaTransparentActivity.class,false);
 	}
 	public void statusBarElMaFixWindow(View view) {
-		launcher(StatusBarELMaFixWindowActivity.class);
+		launcher(StatusBarELMaTransparentActivity.class,true);
 	}
+
+
+
+
+
+
+	public void statusBarWhiteElMa(View view) {
+		launcher(StatusBarELMaWhiteActivity.class,false);
+	}
+
+	public void statusBarElMaWhiteFixWindow(View view) {
+		launcher(StatusBarELMaWhiteActivity.class,true);
+	}
+	public void statusBarElMaLightMode(View view) {
+		Intent intent = new Intent(this, StatusBarELMaWhiteActivity.class);
+		intent.putExtra(INTENT_FLAG_SET_Light_Mode, true);
+		startActivity(intent);
+	}
+
+
+
 	public void statusBarNavBarcomplete(View view) {
 		launcher(StatusBarAndNavBarCompleteActivity.class);
 	}
