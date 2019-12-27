@@ -1,6 +1,7 @@
 package com.example.james.tipsmoudle;
 
 import android.graphics.Color;
+import android.graphics.Rect;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
@@ -51,5 +52,6 @@ public class StatusBarELMaTransparentActivity extends AppCompatActivity {
         // name="android:windowLightStatusBar">true</item>会影响decorView.getSystemUiVisibility()
 
     }
+    
 
 }

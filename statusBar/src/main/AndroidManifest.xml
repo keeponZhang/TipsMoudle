@@ -29,6 +29,8 @@
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity android:name=".隐藏StatusBarBelowFourActivity" />
         <activity android:name=".隐藏StatusBarAfterFourActivity" />
+        <activity android:name=".StatusBarThemeActivity"
+            android:theme="@style/MyAppTheme"></activity>
     </application>
 
 </manifest>
