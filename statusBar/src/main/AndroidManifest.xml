@@ -31,6 +31,8 @@
         <activity android:name=".隐藏StatusBarAfterFourActivity" />
         <activity android:name=".StatusBarThemeActivity"
             android:theme="@style/MyAppTheme"></activity>
+        <activity android:name=".StatusBarDrawsBarBackgroudActivity"
+           ></activity>
     </application>
 
 </manifest>

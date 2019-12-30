@@ -16,6 +16,9 @@ public class LauncherActivity extends AppCompatActivity {
 //				| View.SYSTEM_UI_FLAG_FULLSCREEN;
 //		getWindow().getDecorView().setSystemUiVisibility(uiOptions);
 	}
+	public void StatusBarDrawsBarBackgroud(View view) {
+		launcher(StatusBarDrawsBarBackgroudActivity.class);
+	}
 	public void statusBarTheme(View view) {
 		launcher(StatusBarThemeActivity.class);
 	}

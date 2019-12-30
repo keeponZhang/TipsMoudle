@@ -4,7 +4,7 @@
     <style name="AppTheme" parent="BaseAppTheme">
         <!-- Customize your theme here. -->
         <!--设置浅色状态栏，变成状态栏图标颜色变成黑色 设置到了SystemUiVisibility的一个flag-->
-<!--        <item name="android:windowLightStatusBar">true</item>-->
+        <item name="android:windowLightStatusBar">true</item>
     </style>
 
 </resources>

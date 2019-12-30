@@ -37,13 +37,16 @@ public class StatusBarELMaTransparentActivity extends AppCompatActivity {
         }
         boolean booleanExtra = getIntent().getBooleanExtra(LauncherActivity.INTENT_FLAG_CHANGE, false);
         if(booleanExtra){
-            Log.e("TAG", "StatusBarELMaTransparentActivity onCreate   decorView.setFitsSystemWindows(true);:");
             //状态栏会变白，如果跟decorView.setSystemUiVisibility(option);，状态栏就看不到
             //  fitsSystemWindows , getWindow().setStatusBarColor(Color.White)与  getWindow
             //  ().setStatusBarColor(Color.TRANSPARENT)没区别
             setContentView(R.layout.activity_elma_fixwindow);
+            Log.e("TAG", "StatusBarELMaTransparentActivity onCreate setFitsSystemWindows:" +
+                    getWindow().getDecorView().getPaddingTop());
         }else{
             setContentView(R.layout.activity_elma);
+            Log.e("TAG", "StatusBarELMaTransparentActivity onCreate:" +
+                    getWindow().getDecorView().getPaddingTop());
         }
         //重要：<item name="android:windowLightStatusBar">true</item> 如果注释掉
         //StatusBar的字体颜色为白色
@@ -52,6 +55,6 @@ public class StatusBarELMaTransparentActivity extends AppCompatActivity {
         // name="android:windowLightStatusBar">true</item>会影响decorView.getSystemUiVisibility()
 
     }
-    
+
 
 }
