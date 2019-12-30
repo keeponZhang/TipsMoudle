@@ -30,6 +30,12 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:onClick="sixMethod"
+            android:text="sixMethod"
+            android:textAllCaps="false" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:onClick="statusBarTheme"
             android:text="statusBarTheme"
             android:textAllCaps="false" />

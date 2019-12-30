@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
+import com.example.james.tipsmoudle.immersionbar.SixMethodFixActivity;
 import com.example.james.tipsmoudle.other.OtherLauncherActivity;
 
 public class LauncherActivity extends AppCompatActivity {
@@ -17,6 +18,9 @@ public class LauncherActivity extends AppCompatActivity {
 //		int uiOptions = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
 //				| View.SYSTEM_UI_FLAG_FULLSCREEN;
 //		getWindow().getDecorView().setSystemUiVisibility(uiOptions);
+	}
+	public void sixMethod(View view) {
+		launcher(SixMethodFixActivity.class);
 	}
 	public void otherLauncherFixWindow(View view) {
 		launcher(OtherLauncherActivity.class);

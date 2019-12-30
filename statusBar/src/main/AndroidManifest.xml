@@ -40,6 +40,13 @@
         <activity android:name=".other.UseInFragmentActivity"></activity>
         <activity android:name=".other.SwipeBackActivity"></activity>
         <activity android:name=".other.SwitchModeActivity"> </activity>
+        <activity android:name=".immersionbar.SixMethodFixActivity"></activity>
+        <activity android:name=".immersionbar.Method1Activity"></activity>
+        <activity android:name=".immersionbar.Method2Activity"></activity>
+        <activity android:name=".immersionbar.Method3Activity"></activity>
+        <activity android:name=".immersionbar.Method4Activity"></activity>
+        <activity android:name=".immersionbar.Method5Activity"></activity>
+        <activity android:name=".immersionbar.Method6Activity"></activity>
     </application>
 
 </manifest>
