@@ -33,6 +33,10 @@
             android:theme="@style/MyAppTheme"></activity>
         <activity android:name=".StatusBarDrawsBarBackgroudActivity"
            ></activity>
+        <activity android:name=".other.ImageStatusBarActivity"></activity>
+        <activity android:name=".other.OtherLauncherActivity">
+        </activity>
+        <activity android:name=".other.ImageViewActivity"></activity>
     </application>
 
 </manifest>

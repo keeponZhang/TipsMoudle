@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
+import com.example.james.tipsmoudle.other.OtherLauncherActivity;
+
 public class LauncherActivity extends AppCompatActivity {
 	public static final String INTENT_FLAG_CHANGE = "INTENT_FLAG_CHANGE";
 	public static final String INTENT_FLAG_SET_Light_Mode = "INTENT_FLAG_SET_Light_Mode";
@@ -15,6 +17,9 @@ public class LauncherActivity extends AppCompatActivity {
 //		int uiOptions = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
 //				| View.SYSTEM_UI_FLAG_FULLSCREEN;
 //		getWindow().getDecorView().setSystemUiVisibility(uiOptions);
+	}
+	public void otherLauncher(View view) {
+		launcher(OtherLauncherActivity.class);
 	}
 	public void StatusBarDrawsBarBackgroud(View view) {
 		launcher(StatusBarDrawsBarBackgroudActivity.class);

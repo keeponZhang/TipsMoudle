@@ -13,6 +13,8 @@ public class StatusBarDrawsBarBackgroudActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_elma);
+        //21之后可以直接设置状态栏颜色，但是没法改变状态栏icon和字体颜色
+        //23之后可以改变icon和字体颜色
         if (Build.VERSION.SDK_INT >= 21) {
             //这个flag不能实现沉浸式
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);

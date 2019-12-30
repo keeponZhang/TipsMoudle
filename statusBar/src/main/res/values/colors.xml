@@ -10,4 +10,9 @@
 	<color name="colorAccent">#002147</color>
 	<color name="window_background_color">#ffffff</color>
 
+
+	<color name="white">#ffffff</color>
+	<color name="gray">#4d4d4d</color>
+	<color name="light_gray">#bfbfbf</color>
+
 </resources>
