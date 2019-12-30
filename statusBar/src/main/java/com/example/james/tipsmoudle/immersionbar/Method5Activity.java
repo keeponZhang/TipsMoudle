@@ -16,7 +16,7 @@ public class Method5Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_method5);
         ImmersionBar.with(this)
-                .statusBarColor(R.color.colorPrimary)
+                .titleBar(findViewById(R.id.status_view))
                 .init();
     }
 }
