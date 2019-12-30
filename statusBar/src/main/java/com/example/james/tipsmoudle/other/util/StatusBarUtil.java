@@ -115,9 +115,12 @@ public class StatusBarUtil {
                         });
                     }
                 } else {
+                    Log.e("TAG", "StatusBarUtil setColorForSwipeBack  coordinatorLayout.setStatusBarBackgroundColor:");
                     coordinatorLayout.setStatusBarBackgroundColor(calculateStatusColor(color, statusBarAlpha));
                 }
             } else {
+                Log.e("TAG", "StatusBarUtil setColorForSwipeBack contentView.setBackgroundColor:");
+                //设置最外层的view的背景
                 contentView.setPadding(0, statusBarHeight, 0, 0);
                 contentView.setBackgroundColor(calculateStatusColor(color, statusBarAlpha));
             }
@@ -680,7 +683,7 @@ public class StatusBarUtil {
     /**
      * 设置透明
      */
-    private static void setTransparentForWindow(Activity activity) {
+    public static void setTransparentForWindow(Activity activity) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             activity.getWindow().setStatusBarColor(Color.TRANSPARENT);
             activity.getWindow()

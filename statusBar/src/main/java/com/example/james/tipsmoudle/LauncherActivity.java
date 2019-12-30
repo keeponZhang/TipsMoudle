@@ -18,8 +18,13 @@ public class LauncherActivity extends AppCompatActivity {
 //				| View.SYSTEM_UI_FLAG_FULLSCREEN;
 //		getWindow().getDecorView().setSystemUiVisibility(uiOptions);
 	}
-	public void otherLauncher(View view) {
+	public void otherLauncherFixWindow(View view) {
 		launcher(OtherLauncherActivity.class);
+	}
+	public void otherLauncher(View view) {
+		Intent intent = new Intent(this, OtherLauncherActivity.class);
+		intent.putExtra(OtherLauncherActivity.IS_FIX_SYSTEM_WINDOW, false);
+		startActivity(intent);
 	}
 	public void StatusBarDrawsBarBackgroud(View view) {
 		launcher(StatusBarDrawsBarBackgroudActivity.class);

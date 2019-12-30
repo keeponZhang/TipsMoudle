@@ -37,6 +37,9 @@
         <activity android:name=".other.OtherLauncherActivity">
         </activity>
         <activity android:name=".other.ImageViewActivity"></activity>
+        <activity android:name=".other.UseInFragmentActivity"></activity>
+        <activity android:name=".other.SwipeBackActivity"></activity>
+        <activity android:name=".other.SwitchModeActivity"> </activity>
     </application>
 
 </manifest>

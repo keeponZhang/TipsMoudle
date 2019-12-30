@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -17,7 +18,7 @@ import com.example.james.tipsmoudle.other.util.StatusBarUtil;
 
 /**
  * Created by Jaeger on 16/2/14.
- *
+ * <p>
  * Email: chjie.jaeger@gmail.com
  * GitHub: https://github.com/laobie
  */
@@ -39,12 +40,20 @@ public class OtherLauncherActivity extends BaseActivity {
 
     private int mStatusBarColor;
     private int mAlpha = StatusBarUtil.DEFAULT_STATUS_BAR_ALPHA;
+    public static final String IS_FIX_SYSTEM_WINDOW = "is_fix_system_window";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_other_launcher);
-
+        boolean booleanExtra = getIntent().getBooleanExtra(IS_FIX_SYSTEM_WINDOW, true);
+        if(booleanExtra){
+            setContentView(R.layout.activity_other_launcher);
+            Log.e("TAG", "OtherLauncherActivity onCreate fitsSystemWindows:");
+        }else{
+            setContentView(R.layout.activity_other_launcher2);
+            Log.e("TAG", "OtherLauncherActivity onCreate NO fitsSystemWindows:");
+        }
         mDrawerLayout = findViewById(R.id.drawer_layout);
         contentLayout = findViewById(R.id.main);
         mToolbar = findViewById(R.id.toolbar);
@@ -60,8 +69,9 @@ public class OtherLauncherActivity extends BaseActivity {
         mTvStatusAlpha = findViewById(R.id.tv_status_alpha);
         setSupportActionBar(mToolbar);
 
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, mDrawerLayout, mToolbar, R.string.navigation_drawer_open,
-            R.string.navigation_drawer_close);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, mDrawerLayout, mToolbar,
+                R.string.navigation_drawer_open,
+                R.string.navigation_drawer_close);
         mDrawerLayout.setDrawerListener(toggle);
         toggle.syncState();
 
@@ -75,25 +85,29 @@ public class OtherLauncherActivity extends BaseActivity {
         mBtnSetTransparent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(OtherLauncherActivity.this, ImageStatusBarActivity.class);
+                Intent intent =
+                        new Intent(OtherLauncherActivity.this, ImageStatusBarActivity.class);
                 intent.putExtra(ImageStatusBarActivity.EXTRA_IS_TRANSPARENT, true);
                 startActivity(intent);
             }
         });
-        findViewById(R.id.btn_set_transparent_ui_flag).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(OtherLauncherActivity.this, ImageStatusBarActivity.class);
-                intent.putExtra(ImageStatusBarActivity.EXTRA_IS_TRANSPARENT, true);
-                intent.putExtra(ImageStatusBarActivity.EXTRA_IS_USE_UI_FLAG, true);
-                startActivity(intent);
-            }
-        });
+        findViewById(R.id.btn_set_transparent_ui_flag)
+                .setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(OtherLauncherActivity.this,
+                                ImageStatusBarActivity.class);
+                        intent.putExtra(ImageStatusBarActivity.EXTRA_IS_TRANSPARENT, true);
+                        intent.putExtra(ImageStatusBarActivity.EXTRA_IS_USE_UI_FLAG, true);
+                        startActivity(intent);
+                    }
+                });
 
         mBtnSetTranslucent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(OtherLauncherActivity.this, ImageStatusBarActivity.class);
+                Intent intent =
+                        new Intent(OtherLauncherActivity.this, ImageStatusBarActivity.class);
                 intent.putExtra(ImageStatusBarActivity.EXTRA_IS_TRANSPARENT, false);
                 startActivity(intent);
             }
@@ -110,21 +124,24 @@ public class OtherLauncherActivity extends BaseActivity {
         mBtnUseInFragment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(OtherLauncherActivity.this, UseInFragmentActivity.class);
+                startActivity(intent);
             }
         });
 
         mBtnSetColorForSwipeBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(OtherLauncherActivity.this, SwipeBackActivity.class);
+                startActivity(intent);
             }
         });
 
         mBtnSwitchMode.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent intent = new Intent(OtherLauncherActivity.this, SwitchModeActivity.class);
+                startActivity(intent);
             }
         });
 
@@ -132,14 +149,17 @@ public class OtherLauncherActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 if (mChbTranslucent.isChecked()) {
-                    contentLayout.setBackgroundDrawable(getResources().getDrawable(R.drawable.bg_monkey));
-                    StatusBarUtil.setTranslucentForDrawerLayout(OtherLauncherActivity.this, mDrawerLayout, mAlpha);
-                    mToolbar.setBackgroundColor(getResources().getColor(android.R.color.transparent));
+                    contentLayout.setBackgroundDrawable(
+                            getResources().getDrawable(R.drawable.bg_monkey));
+                    StatusBarUtil.setTranslucentForDrawerLayout(OtherLauncherActivity.this,
+                            mDrawerLayout, mAlpha);
+                    mToolbar.setBackgroundColor(
+                            getResources().getColor(android.R.color.transparent));
                 } else {
                     contentLayout.setBackgroundDrawable(null);
                     mToolbar.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
                     StatusBarUtil.setColorForDrawerLayout(OtherLauncherActivity.this, mDrawerLayout,
-                        getResources().getColor(R.color.colorPrimary), mAlpha);
+                            getResources().getColor(R.color.colorPrimary), mAlpha);
                 }
             }
         });
@@ -150,9 +170,11 @@ public class OtherLauncherActivity extends BaseActivity {
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 mAlpha = progress;
                 if (mChbTranslucent.isChecked()) {
-                    StatusBarUtil.setTranslucentForDrawerLayout(OtherLauncherActivity.this, mDrawerLayout, mAlpha);
+                    StatusBarUtil.setTranslucentForDrawerLayout(OtherLauncherActivity.this,
+                            mDrawerLayout, mAlpha);
                 } else {
-                    StatusBarUtil.setColorForDrawerLayout(OtherLauncherActivity.this, mDrawerLayout, mStatusBarColor, mAlpha);
+                    StatusBarUtil.setColorForDrawerLayout(OtherLauncherActivity.this, mDrawerLayout,
+                            mStatusBarColor, mAlpha);
                 }
                 mTvStatusAlpha.setText(String.valueOf(mAlpha));
             }
@@ -173,6 +195,7 @@ public class OtherLauncherActivity extends BaseActivity {
     @Override
     protected void setStatusBar() {
         mStatusBarColor = getResources().getColor(R.color.colorPrimary);
-        StatusBarUtil.setColorForDrawerLayout(this, (DrawerLayout) findViewById(R.id.drawer_layout), mStatusBarColor, mAlpha);
+        StatusBarUtil.setColorForDrawerLayout(this, (DrawerLayout) findViewById(R.id.drawer_layout),
+                mStatusBarColor, mAlpha);
     }
 }
