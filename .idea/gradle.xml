@@ -11,6 +11,9 @@
             <option value="$PROJECT_DIR$/amm_sdk_sample" />
             <option value="$PROJECT_DIR$/constraintlayoutdemo" />
             <option value="$PROJECT_DIR$/immersionbar" />
+            <option value="$PROJECT_DIR$/immersionbar-components" />
+            <option value="$PROJECT_DIR$/immersionbar-ktx" />
+            <option value="$PROJECT_DIR$/immersionbar-sample" />
             <option value="$PROJECT_DIR$/mvvm" />
             <option value="$PROJECT_DIR$/nexuslibrary" />
             <option value="$PROJECT_DIR$/statusBar" />
