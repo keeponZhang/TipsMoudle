@@ -48,8 +48,8 @@ class BarConfig {
         mInPortrait = (res.getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT);
         mSmallestWidthDp = getSmallestWidthDp(activity);
         mStatusBarHeight = getInternalDimensionSize(activity, IMMERSION_STATUS_BAR_HEIGHT);
-        Log.e("TAG", "BarConfig BarConfig mStatusBarHeight:"+mStatusBarHeight);
-        Log.e("TAG", "BarConfig BarConfig getStatusBarHeight:"+getStatusBarHeight(activity));
+        Log.d("TAG", "BarConfig BarConfig mStatusBarHeight:"+mStatusBarHeight);
+        Log.d("TAG", "BarConfig BarConfig getStatusBarHeight:"+getStatusBarHeight(activity));
         mActionBarHeight = getActionBarHeight(activity);
         mNavigationBarHeight = getNavigationBarHeight(activity);
         mNavigationBarWidth = getNavigationBarWidth(activity);

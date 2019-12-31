@@ -19,6 +19,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.graphics.ColorUtils;
 import android.support.v4.widget.DrawerLayout;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -246,6 +247,7 @@ public final class ImmersionBar implements ImmersionCallback {
      * 通过上面配置后初始化后方可成功调用
      */
     public void init() {
+        Log.e("TAG", "ImmersionBar init mInitialized:"+mInitialized);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT && mBarParams.barEnable) {
             //更新Bar的参数
             updateBarParams();
@@ -396,6 +398,7 @@ public final class ImmersionBar implements ImmersionCallback {
         if (!mInitialized) {
             mBarParams.defaultNavigationBarColor = mWindow.getNavigationBarColor();
         }
+        Log.e("TAG", "ImmersionBar initBarAboveLOLLIPOP mBarParams.statusBarColor:"+mBarParams.statusBarColor);
         //Activity全屏显示，但状态栏不会被隐藏覆盖，状态栏依然可见，Activity顶端布局部分会被状态栏遮住。
         uiFlags |= View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN;
         if (mBarParams.fullScreen && mBarParams.navigationBarEnable) {
@@ -605,17 +608,25 @@ public final class ImmersionBar implements ImmersionCallback {
      */
     private void fitsWindowsAboveLOLLIPOP() {
         updateBarConfig();
-        if (checkFitsSystemWindows(mDecorView.findViewById(android.R.id.content))) {
+        if(mContentView!=null){
+            mContentView.getPaddingBottom();
+        }
+        boolean checkFitsSystemWindows = checkFitsSystemWindows(mDecorView.findViewById(android.R.id.content));
+        Log.e("TAG", "ImmersionBar fitsWindowsAboveLOLLIPOP checkFitsSystemWindows:"+checkFitsSystemWindows);
+        if (checkFitsSystemWindows) {
             setPadding(0, 0, 0, 0);
             return;
         }
         int top = 0;
+
         if (mBarParams.fits && mFitsStatusBarType == FLAG_FITS_SYSTEM_WINDOWS) {
             top = mBarConfig.getStatusBarHeight();
         }
         if (mBarParams.isSupportActionBar) {
             top = mBarConfig.getStatusBarHeight() + mActionBarHeight;
         }
+        Log.e("TAG", "ImmersionBar fitsWindowsAboveLOLLIPOP mBarParams.fits:"+mBarParams.fits+"  " +
+                "mFitsStatusBarType ="+mFitsStatusBarType+" top="+top);
         setPadding(0, top, 0, 0);
     }
 
@@ -1313,6 +1324,7 @@ public final class ImmersionBar implements ImmersionCallback {
         if (view.getFitsSystemWindows()) {
             return true;
         }
+        //ViewGroup 会检查直接子view是不是FitsSystemWindows
         if (view instanceof ViewGroup) {
             ViewGroup viewGroup = (ViewGroup) view;
             for (int i = 0, count = viewGroup.getChildCount(); i < count; i++) {

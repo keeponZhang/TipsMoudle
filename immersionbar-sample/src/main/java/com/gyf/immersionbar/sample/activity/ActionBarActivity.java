@@ -35,7 +35,6 @@ public class ActionBarActivity extends BaseActivity {
 
     @Override
     protected void initImmersionBar() {
-        super.initImmersionBar();
         ImmersionBar.with(this).keyboardEnable(true).init();
     }
 

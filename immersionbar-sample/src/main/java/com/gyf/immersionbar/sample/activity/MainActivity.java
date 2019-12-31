@@ -117,7 +117,7 @@ public class MainActivity extends BaseActivity implements DrawerLayout.DrawerLis
     @Override
     protected void initView() {
         drawer.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
-        showSplash();
+        // showSplash();
         GlideUtils.loadBlurry(ivBg, Utils.getPic());
         mMainAdapter = new MainAdapter();
         tvVersion.setText("当前版本：" + BuildConfig.VERSION_NAME);
