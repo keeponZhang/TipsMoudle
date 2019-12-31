@@ -30,6 +30,8 @@ public class KeyBoardActivity extends BaseActivity {
     Toolbar toolbar;
     private List<Map<String, Object>> mapList;
 
+    public static final String INTENT_FIX_KEY_BOARD = "FIX_KEY_BOARD";
+
     @Override
     protected int getLayoutId() {
         return R.layout.activity_key_board;
@@ -38,10 +40,18 @@ public class KeyBoardActivity extends BaseActivity {
     @Override
     protected void initImmersionBar() {
         super.initImmersionBar();
-        ImmersionBar.with(this).titleBar(toolbar)
-                //解决软键盘与底部输入框冲突问题
-                .keyboardEnable(true)
-                .init();
+        boolean isFix = getIntent().getBooleanExtra(INTENT_FIX_KEY_BOARD, false);
+
+        if(isFix){
+            ImmersionBar.with(this).titleBar(toolbar)
+                    //解决软键盘与底部输入框冲突问题
+                    .keyboardEnable(true)
+                    .init();
+        }else{
+            ImmersionBar.with(this).titleBar(toolbar)
+                    .init();
+        }
+
     }
 
     @Override

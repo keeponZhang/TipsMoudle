@@ -19,6 +19,7 @@
     <string name="text_flyme">修改Flyme OS状态栏字体颜色</string>
     <string name="text_over">解决布局顶部和状态栏重叠问题</string>
     <string name="text_key_board">解决EditText和软键盘的问题</string>
+    <string name="text_key_board_problem">EditText和软键盘的问题</string>
     <string name="text_all_edit">界面全是EditText</string>
     <string name="text_login">登录界面</string>
     <string name="text_white_bar">解决白色状态栏问题</string>

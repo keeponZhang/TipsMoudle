@@ -53,6 +53,8 @@ class BarConfig {
         mActionBarHeight = getActionBarHeight(activity);
         mNavigationBarHeight = getNavigationBarHeight(activity);
         mNavigationBarWidth = getNavigationBarWidth(activity);
+        Log.d("TAG", "BarConfig BarConfig mNavigationBarHeight:"+mNavigationBarHeight+" " +
+                "mInPortrait="+mInPortrait);
         mHasNavigationBar = (mNavigationBarHeight > 0);
     }
 

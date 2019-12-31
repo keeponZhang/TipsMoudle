@@ -1,5 +1,6 @@
 package com.gyf.immersionbar.sample.activity;
 
+import android.graphics.Color;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ImageView;
@@ -37,7 +38,7 @@ public class PicAndColorActivity extends BaseActivity implements SeekBar.OnSeekB
     protected void initImmersionBar() {
         super.initImmersionBar();
         ImmersionBar.with(this).statusBarView(R.id.top_view)
-                .navigationBarColor(R.color.colorPrimary)
+                .navigationBarColorInt(Color.TRANSPARENT)
                 .fullScreen(true)
                 .addTag("PicAndColor")
                 .init();

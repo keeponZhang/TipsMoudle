@@ -225,6 +225,7 @@ public class MainActivity extends BaseActivity implements DrawerLayout.DrawerLis
                     break;
                 case 18:
                     intent = new Intent(this, KeyBoardActivity.class);
+                    intent.putExtra(KeyBoardActivity.INTENT_FIX_KEY_BOARD, true);
                     break;
                 case 19:
                     intent = new Intent(this, AllEditActivity.class);
@@ -275,6 +276,10 @@ public class MainActivity extends BaseActivity implements DrawerLayout.DrawerLis
                     break;
                 case 29:
                     ImmersionBar.with(this).statusBarDarkFont(false).init();
+                    break;
+                case 30:
+                intent = new Intent(this, KeyBoardActivity.class);
+                intent.putExtra(KeyBoardActivity.INTENT_FIX_KEY_BOARD, false);
                     break;
                 default:
                     break;

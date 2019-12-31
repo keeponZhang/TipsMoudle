@@ -4,6 +4,7 @@ import android.graphics.Rect;
 import android.os.Build;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.DrawerLayout;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import android.view.Window;
@@ -91,6 +92,7 @@ class FitsKeyboard implements ViewTreeObserver.OnGlobalLayoutListener {
 
     @Override
     public void onGlobalLayout() {
+        Log.e("TAG", "FitsKeyboard onGlobalLayout keyboardEnable:"+mImmersionBar.getBarParams().keyboardEnable);
         if (mImmersionBar != null && mImmersionBar.getBarParams() != null && mImmersionBar.getBarParams().keyboardEnable) {
             BarConfig barConfig = mImmersionBar.getBarConfig();
             int bottom = 0, keyboardHeight, navigationBarHeight = barConfig.isNavigationAtBottom() ? barConfig.getNavigationBarHeight() : barConfig.getNavigationBarWidth();

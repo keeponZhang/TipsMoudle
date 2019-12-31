@@ -809,6 +809,7 @@ public final class ImmersionBar implements ImmersionCallback {
                     colorBefore = integerEntry.getKey();
                     colorAfter = integerEntry.getValue();
                 }
+                Log.w("TAG", "ImmersionBar transformView view:"+view);
                 if (view != null) {
                     if (Math.abs(mBarParams.viewAlpha - 0.0f) == 0) {
                         view.setBackgroundColor(ColorUtils.blendARGB(colorBefore, colorAfter, mBarParams.statusBarAlpha));
@@ -1031,6 +1032,9 @@ public final class ImmersionBar implements ImmersionCallback {
                         v.post(new Runnable() {
                             @Override
                             public void run() {
+                                Log.w("TAG", "ImmersionBar run v.getHeight():"+v.getHeight()+
+                                        " statusBarHeight ="+statusBarHeight+"  finalFitsHeight="+finalFitsHeight);
+                                //这里其实是一样的意思，只是wrap_content或者match_parent，高度不能立即获得
                                 finalLayoutParams.height = v.getHeight() + statusBarHeight - finalFitsHeight;
                                 v.setPadding(v.getPaddingLeft(),
                                         v.getPaddingTop() + statusBarHeight - finalFitsHeight,
@@ -1040,7 +1044,10 @@ public final class ImmersionBar implements ImmersionCallback {
                             }
                         });
                     } else {
+                        //如果高度已经确定了，增加整个的高度，然后增加的那部分设置为paddingTop
                         layoutParams.height += statusBarHeight - fitsHeight;
+                        Log.w("TAG", "ImmersionBar else  v.getHeight():"+v.getHeight()+
+                                " statusBarHeight ="+statusBarHeight+"  layoutParams.height="+layoutParams.height);
                         v.setPadding(v.getPaddingLeft(), v.getPaddingTop() + statusBarHeight - fitsHeight,
                                 v.getPaddingRight(), v.getPaddingBottom());
                         v.setLayoutParams(layoutParams);
@@ -1200,6 +1207,7 @@ public final class ImmersionBar implements ImmersionCallback {
                     if (lp == null) {
                         lp = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 0);
                     }
+                    Log.e("TAG", "ImmersionBar setStatusBarView lp.height:"+lp.height);
                     lp.height = fixHeight;
                     v.setLayoutParams(lp);
                 }
@@ -2770,7 +2778,7 @@ public final class ImmersionBar implements ImmersionCallback {
      * @return the immersion bar
      */
     public ImmersionBar titleBar(@IdRes int viewId) {
-        return titleBar(viewId, true);
+        return titleBar(viewId, false);
     }
 
     /**
