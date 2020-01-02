@@ -93,7 +93,6 @@ class FitsKeyboard implements ViewTreeObserver.OnGlobalLayoutListener {
 
     @Override
     public void onGlobalLayout() {
-        Log.e("TAG", "FitsKeyboard onGlobalLayout keyboardEnable:"+mImmersionBar.getBarParams().keyboardEnable);
         if (mImmersionBar != null && mImmersionBar.getBarParams() != null && mImmersionBar.getBarParams().keyboardEnable) {
             BarConfig barConfig = mImmersionBar.getBarConfig();
             int bottom = 0, keyboardHeight, navigationBarHeight = barConfig.isNavigationAtBottom() ? barConfig.getNavigationBarHeight() : barConfig.getNavigationBarWidth();
@@ -113,13 +112,16 @@ class FitsKeyboard implements ViewTreeObserver.OnGlobalLayoutListener {
                         }
                         if (mImmersionBar.getBarParams().fits) {
                             keyboardHeight += barConfig.getStatusBarHeight();
+                            Log.w("TAG", "FitsKeyboard onGlobalLayout   加上statusbar height " +
+                                    "调整:"+barConfig.getStatusBarHeight());
+
                         }
                         if (keyboardHeight > navigationBarHeight) {
                             bottom = keyboardHeight + mPaddingBottom;
                             isPopup = true;
                         }
                         mContentView.setPadding(mPaddingLeft, mPaddingTop, mPaddingRight, bottom);
-                        Log.e("TAG", "FitsKeyboard onGlobalLayout   mContentView.setPadding 调整:");
+                        Log.e("TAG", "FitsKeyboard onGlobalLayout   mContentView.setPadding 调整:"+barConfig.getStatusBarHeight());
                     } else {
                         bottom = mImmersionBar.getPaddingBottom();
                         keyboardHeight -= navigationBarHeight;
@@ -141,6 +143,7 @@ class FitsKeyboard implements ViewTreeObserver.OnGlobalLayoutListener {
                 if (keyboardHeight < 0) {
                     keyboardHeight = 0;
                 }
+                Log.w("TAG", "FitsKeyboard onGlobalLayout keyboardHeight:"+keyboardHeight);
                 if (mImmersionBar.getBarParams().onKeyboardListener != null) {
                     mImmersionBar.getBarParams().onKeyboardListener.onKeyboardChange(isPopup, keyboardHeight);
                 }

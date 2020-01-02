@@ -26,9 +26,13 @@ public class WebActivity extends BaseActivity {
         return R.layout.activity_web;
     }
 
+    // 这时候，情况就会变得复杂了:
+    //
+    // 首先，页面是非全屏模式的情况下，给activity设置adjustPan会失效。(不设置反而没事)
+    // 其次，页面是全屏模式的情况，adjustPan跟adjustResize都会失效。
     @Override
     protected void initImmersionBar() {
-        super.initImmersionBar();
+        // super.initImmersionBar();
         boolean isFix = getIntent().getBooleanExtra(KeyBoardActivity.INTENT_FIX_KEY_BOARD, false);
         //
         if(isFix){
