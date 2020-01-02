@@ -7,6 +7,7 @@ import android.widget.LinearLayout;
 
 import com.gyf.immersionbar.ImmersionBar;
 import com.gyf.immersionbar.sample.R;
+import com.gyf.immersionbar.sample.utils.AndroidBug5497Workaround;
 
 import butterknife.BindView;
 
@@ -43,6 +44,7 @@ public class WebActivity extends BaseActivity {
         }else{
             ImmersionBar.with(this).titleBar(R.id.toolbar)
                     .init();
+            AndroidBug5497Workaround.assistActivity(this);
         }
     }
 

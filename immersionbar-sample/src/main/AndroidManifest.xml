@@ -143,6 +143,7 @@
             android:configChanges="screenSize|smallestScreenSize|screenLayout|orientation|keyboardHidden" />
         <activity
             android:name="com.gyf.immersionbar.sample.activity.WebActivity"
+            android:windowSoftInputMode="adjustPan"
             android:configChanges="screenSize|smallestScreenSize|screenLayout|orientation|keyboardHidden" />
         <activity
             android:name="com.gyf.immersionbar.sample.activity.DialogActivity"
