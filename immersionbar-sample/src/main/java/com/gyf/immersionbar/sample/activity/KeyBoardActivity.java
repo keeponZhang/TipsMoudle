@@ -39,18 +39,17 @@ public class KeyBoardActivity extends BaseActivity {
 
     @Override
     protected void initImmersionBar() {
-        super.initImmersionBar();
         boolean isFix = getIntent().getBooleanExtra(INTENT_FIX_KEY_BOARD, false);
-
-        if(isFix){
-            ImmersionBar.with(this).titleBar(toolbar)
-                    //解决软键盘与底部输入框冲突问题
-                    .keyboardEnable(true)
-                    .init();
-        }else{
-            ImmersionBar.with(this).titleBar(toolbar)
-                    .init();
-        }
+        //
+        // if(isFix){
+        //     ImmersionBar.with(this).titleBar(toolbar)
+        //             //解决软键盘与底部输入框冲突问题
+        //             .keyboardEnable(true)
+        //             .init();
+        // }else{
+        //     ImmersionBar.with(this).titleBar(toolbar)
+        //             .init();
+        // }
 
     }
 

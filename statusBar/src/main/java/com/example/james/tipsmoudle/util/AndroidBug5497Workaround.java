@@ -2,6 +2,7 @@ package com.example.james.tipsmoudle.util;
 
 import android.app.Activity;
 import android.graphics.Rect;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import android.widget.FrameLayout;
@@ -35,6 +36,8 @@ public class AndroidBug5497Workaround {
         if (usableHeightNow != usableHeightPrevious) {
             int usableHeightSansKeyboard = mChildOfContent.getRootView().getHeight();
             int heightDifference = usableHeightSansKeyboard - usableHeightNow;
+            Log.e("TAG", "AndroidBug5497Workaround possiblyResizeChildOfContent " +
+                    "heightDifference:"+heightDifference+" usableHeightSansKeyboard="+usableHeightSansKeyboard);
             if (heightDifference > (usableHeightSansKeyboard/4)) {
                 // keyboard probably just became visible
                 frameLayoutParams.height = usableHeightSansKeyboard - heightDifference;

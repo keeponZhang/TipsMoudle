@@ -9,9 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <!--android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen"-->
-        <activity android:name=".FlagActivity"></activity>
-        <activity android:name=".StatusBarCompleteActivity"></activity>
+        <activity android:name=".ruanjianpan.AdjustPanActivity"
+            android:windowSoftInputMode="adjustPan"></activity>
+        <activity android:name=".ruanjianpan.AdjustResizeActivity"
+            android:windowSoftInputMode="adjustResize"></activity>
+        <!-- android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen" -->
+        <activity android:name=".FlagActivity" />
+        <activity android:name=".StatusBarCompleteActivity" />
         <activity android:name=".StatusBarELMaTransparentActivity" />
         <activity android:name=".StatusBarELMaWhiteActivity" />
         <activity android:name=".LauncherActivity">
@@ -29,24 +33,23 @@
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity android:name=".隐藏StatusBarBelowFourActivity" />
         <activity android:name=".隐藏StatusBarAfterFourActivity" />
-        <activity android:name=".StatusBarThemeActivity"
-            android:theme="@style/MyAppTheme"></activity>
-        <activity android:name=".StatusBarDrawsBarBackgroudActivity"
-           ></activity>
-        <activity android:name=".other.ImageStatusBarActivity"></activity>
-        <activity android:name=".other.OtherLauncherActivity">
-        </activity>
-        <activity android:name=".other.ImageViewActivity"></activity>
-        <activity android:name=".other.UseInFragmentActivity"></activity>
-        <activity android:name=".other.SwipeBackActivity"></activity>
-        <activity android:name=".other.SwitchModeActivity"> </activity>
-        <activity android:name=".immersionbar.SixMethodFixActivity"></activity>
-        <activity android:name=".immersionbar.Method1Activity"></activity>
-        <activity android:name=".immersionbar.Method2Activity"></activity>
-        <activity android:name=".immersionbar.Method3Activity"></activity>
-        <activity android:name=".immersionbar.Method4Activity"></activity>
-        <activity android:name=".immersionbar.Method5Activity"></activity>
-        <activity android:name=".immersionbar.Method6Activity"></activity>
+        <activity
+            android:name=".StatusBarThemeActivity"
+            android:theme="@style/MyAppTheme" />
+        <activity android:name=".StatusBarDrawsBarBackgroudActivity" />
+        <activity android:name=".other.ImageStatusBarActivity" />
+        <activity android:name=".other.OtherLauncherActivity"></activity>
+        <activity android:name=".other.ImageViewActivity" />
+        <activity android:name=".other.UseInFragmentActivity" />
+        <activity android:name=".other.SwipeBackActivity" />
+        <activity android:name=".other.SwitchModeActivity"></activity>
+        <activity android:name=".immersionbar.SixMethodFixActivity" />
+        <activity android:name=".immersionbar.Method1Activity" />
+        <activity android:name=".immersionbar.Method2Activity" />
+        <activity android:name=".immersionbar.Method3Activity" />
+        <activity android:name=".immersionbar.Method4Activity" />
+        <activity android:name=".immersionbar.Method5Activity" />
+        <activity android:name=".immersionbar.Method6Activity" />
     </application>
 
 </manifest>

@@ -13,6 +13,7 @@ import android.widget.CheckBox;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
+import com.example.james.tipsmoudle.LauncherActivity;
 import com.example.james.tipsmoudle.R;
 import com.example.james.tipsmoudle.other.util.StatusBarUtil;
 
@@ -40,13 +41,14 @@ public class OtherLauncherActivity extends BaseActivity {
 
     private int mStatusBarColor;
     private int mAlpha = StatusBarUtil.DEFAULT_STATUS_BAR_ALPHA;
-    public static final String IS_FIX_SYSTEM_WINDOW = "is_fix_system_window";
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        boolean booleanExtra = getIntent().getBooleanExtra(IS_FIX_SYSTEM_WINDOW, true);
+        boolean booleanExtra = getIntent().getBooleanExtra(LauncherActivity.IS_FIX_SYSTEM_WINDOW,
+                true);
         if(booleanExtra){
             setContentView(R.layout.activity_other_launcher);
             Log.e("TAG", "OtherLauncherActivity onCreate fitsSystemWindows:");

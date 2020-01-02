@@ -7,117 +7,169 @@ import android.view.View;
 
 import com.example.james.tipsmoudle.immersionbar.SixMethodFixActivity;
 import com.example.james.tipsmoudle.other.OtherLauncherActivity;
+import com.example.james.tipsmoudle.ruanjianpan.AdjustPanActivity;
+import com.example.james.tipsmoudle.ruanjianpan.AdjustResizeActivity;
 
 public class LauncherActivity extends AppCompatActivity {
-	public static final String INTENT_FLAG_CHANGE = "INTENT_FLAG_CHANGE";
-	public static final String INTENT_FLAG_SET_Light_Mode = "INTENT_FLAG_SET_Light_Mode";
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_launcher);
+    public static final String INTENT_FLAG_CHANGE = "INTENT_FLAG_CHANGE";
+    public static final String INTENT_FLAG_SET_Light_Mode = "INTENT_FLAG_SET_Light_Mode";
+    public static final String INTENT_FLAG_SCORLL = "INTENT_FLAG_SCORLL";
+    public static final String IS_FIX_SYSTEM_WINDOW = "is_fix_system_window";
+    public static final String IS_FIX_BUG = "IS_FIX_BUG";
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_launcher);
 //		int uiOptions = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
 //				| View.SYSTEM_UI_FLAG_FULLSCREEN;
 //		getWindow().getDecorView().setSystemUiVisibility(uiOptions);
-	}
-	public void sixMethod(View view) {
-		launcher(SixMethodFixActivity.class);
-	}
-	public void otherLauncherFixWindow(View view) {
-		launcher(OtherLauncherActivity.class);
-	}
-	public void otherLauncher(View view) {
-		Intent intent = new Intent(this, OtherLauncherActivity.class);
-		intent.putExtra(OtherLauncherActivity.IS_FIX_SYSTEM_WINDOW, false);
-		startActivity(intent);
-	}
-	public void StatusBarDrawsBarBackgroud(View view) {
-		launcher(StatusBarDrawsBarBackgroudActivity.class);
-	}
-	public void statusBarTheme(View view) {
-		launcher(StatusBarThemeActivity.class);
-	}
-	public void statusBarcomplete(View view) {
-		launcher(StatusBarCompleteActivity.class);
-	}
+    }
 
-	private void launcher(Class  clazz,boolean isChange) {
-		Intent intent = new Intent(this, clazz);
-		intent.putExtra(INTENT_FLAG_CHANGE, isChange);
-		startActivity(intent);
-	}
-	private void launcher(Class  clazz) {
-		launcher(clazz, false);
-	}
+    public void adjustResize(View view) {
+        launcher(AdjustResizeActivity.class);
+    }
 
-	public void statusBarElMa(View view) {
-		launcher(StatusBarELMaTransparentActivity.class,false);
-	}
-	public void statusBarElMaFixWindow(View view) {
-		launcher(StatusBarELMaTransparentActivity.class,true);
-	}
+    public void adjustResizeScroll(View view) {
+        Intent intent = new Intent(this, AdjustResizeActivity.class);
+        intent.putExtra(LauncherActivity.INTENT_FLAG_SCORLL, true);
+        startActivity(intent);
+    }
+    public void adjustResizeScrollChange(View view) {
+        Intent intent = new Intent(this, AdjustResizeActivity.class);
+        intent.putExtra(LauncherActivity.INTENT_FLAG_SCORLL, true);
+        intent.putExtra(LauncherActivity.INTENT_FLAG_CHANGE, true);
+        startActivity(intent);
+    }
+    public void adjustResizeScrollChangeFix(View view) {
+        Intent intent = new Intent(this, AdjustResizeActivity.class);
+        intent.putExtra(LauncherActivity.INTENT_FLAG_SCORLL, true);
+        intent.putExtra(LauncherActivity.INTENT_FLAG_CHANGE, true);
+        intent.putExtra(LauncherActivity.IS_FIX_BUG, true);
+        startActivity(intent);
+    }
+    public void adjustPan(View view) {
+        launcher(AdjustPanActivity.class);
+    }
 
-
-
-
+    public void adjustPanScroll(View view) {
+        Intent intent = new Intent(this, AdjustPanActivity.class);
+        intent.putExtra(LauncherActivity.INTENT_FLAG_SCORLL, true);
+        startActivity(intent);
+    }
+    public void adjustPanScrollChange(View view) {
+        Intent intent = new Intent(this, AdjustPanActivity.class);
+        intent.putExtra(LauncherActivity.INTENT_FLAG_SCORLL, true);
+        intent.putExtra(LauncherActivity.INTENT_FLAG_CHANGE, true);
+        startActivity(intent);
+    }
 
 
-	public void statusBarWhiteElMa(View view) {
-		launcher(StatusBarELMaWhiteActivity.class,false);
-	}
+    public void sixMethod(View view) {
+        launcher(SixMethodFixActivity.class);
+    }
 
-	public void statusBarElMaWhiteFixWindow(View view) {
-		launcher(StatusBarELMaWhiteActivity.class,true);
-	}
-	public void statusBarElMaLightMode(View view) {
-		Intent intent = new Intent(this, StatusBarELMaWhiteActivity.class);
-		intent.putExtra(INTENT_FLAG_SET_Light_Mode, true);
-		startActivity(intent);
-	}
+    public void otherLauncherFixWindow(View view) {
+        launcher(OtherLauncherActivity.class);
+    }
 
+    public void otherLauncher(View view) {
+        Intent intent = new Intent(this, OtherLauncherActivity.class);
+        intent.putExtra(LauncherActivity.IS_FIX_SYSTEM_WINDOW, false);
+        startActivity(intent);
+    }
 
+    public void StatusBarDrawsBarBackgroud(View view) {
+        launcher(StatusBarDrawsBarBackgroudActivity.class);
+    }
 
-	public void statusBarNavBarcomplete(View view) {
-		launcher(StatusBarAndNavBarCompleteActivity.class);
-	}
-	public void statusBarNavBarElMa(View view) {
-		launcher(StatusBarAndNavELMaActivity.class);
-	}
-	public void after19statusBarNavBarComplete(View view) {
-		launcher(After19StatusBarAndNavCompleteActivity.class);
-	}
-	public void flag(View view) {
-		launcher(FlagActivity.class);
-	}
+    public void statusBarTheme(View view) {
+        launcher(StatusBarThemeActivity.class);
+    }
 
-	public void beforedanhuanSystemBar(View view) {
-		launcher(淡化SystemBarActivity.class,false);
-	}
+    public void statusBarcomplete(View view) {
+        launcher(StatusBarCompleteActivity.class);
+    }
 
-	public void afterdanhuanSystemBar(View view) {
-		launcher(淡化SystemBarActivity.class,true);
-	}
+    private void launcher(Class clazz, boolean isChange) {
+        Intent intent = new Intent(this, clazz);
+        intent.putExtra(INTENT_FLAG_CHANGE, isChange);
+        startActivity(intent);
+    }
 
-	public void beforeyingcangStatusBarlow4(View view) {
-		Intent intent = new Intent(this, 隐藏StatusBarBelowFourActivity.class);
-		intent.putExtra(INTENT_FLAG_CHANGE, false);
-		startActivity(intent);
-	}
-	public void afteryingcangStatusBarlow4(View view) {
-		Intent intent = new Intent(this, 隐藏StatusBarBelowFourActivity.class);
-		intent.putExtra(INTENT_FLAG_CHANGE, true);
-		startActivity(intent);
-	}
+    private void launcher(Class clazz) {
+        launcher(clazz, false);
+    }
 
-	public void beforeyingcangStatusBarafter4(View view) {
-		Intent intent = new Intent(this, 隐藏StatusBarAfterFourActivity.class);
-		intent.putExtra(INTENT_FLAG_CHANGE, false);
-		startActivity(intent);
-	}
-	public void afteryingcangStatusBarafter4(View view) {
-		Intent intent = new Intent(this, 隐藏StatusBarAfterFourActivity.class);
-		intent.putExtra(INTENT_FLAG_CHANGE, true);
-		startActivity(intent);
-	}
+    public void statusBarElMa(View view) {
+        launcher(StatusBarELMaTransparentActivity.class, false);
+    }
+
+    public void statusBarElMaFixWindow(View view) {
+        launcher(StatusBarELMaTransparentActivity.class, true);
+    }
+
+    public void statusBarWhiteElMa(View view) {
+        launcher(StatusBarELMaWhiteActivity.class, false);
+    }
+
+    public void statusBarElMaWhiteFixWindow(View view) {
+        launcher(StatusBarELMaWhiteActivity.class, true);
+    }
+
+    public void statusBarElMaLightMode(View view) {
+        Intent intent = new Intent(this, StatusBarELMaWhiteActivity.class);
+        intent.putExtra(INTENT_FLAG_SET_Light_Mode, true);
+        startActivity(intent);
+    }
+
+    public void statusBarNavBarcomplete(View view) {
+        launcher(StatusBarAndNavBarCompleteActivity.class);
+    }
+
+    public void statusBarNavBarElMa(View view) {
+        launcher(StatusBarAndNavELMaActivity.class);
+    }
+
+    public void after19statusBarNavBarComplete(View view) {
+        launcher(After19StatusBarAndNavCompleteActivity.class);
+    }
+
+    public void flag(View view) {
+        launcher(FlagActivity.class);
+    }
+
+    public void beforedanhuanSystemBar(View view) {
+        launcher(淡化SystemBarActivity.class, false);
+    }
+
+    public void afterdanhuanSystemBar(View view) {
+        launcher(淡化SystemBarActivity.class, true);
+    }
+
+    public void beforeyingcangStatusBarlow4(View view) {
+        Intent intent = new Intent(this, 隐藏StatusBarBelowFourActivity.class);
+        intent.putExtra(INTENT_FLAG_CHANGE, false);
+        startActivity(intent);
+    }
+
+    public void afteryingcangStatusBarlow4(View view) {
+        Intent intent = new Intent(this, 隐藏StatusBarBelowFourActivity.class);
+        intent.putExtra(INTENT_FLAG_CHANGE, true);
+        startActivity(intent);
+    }
+
+    public void beforeyingcangStatusBarafter4(View view) {
+        Intent intent = new Intent(this, 隐藏StatusBarAfterFourActivity.class);
+        intent.putExtra(INTENT_FLAG_CHANGE, false);
+        startActivity(intent);
+    }
+
+    public void afteryingcangStatusBarafter4(View view) {
+        Intent intent = new Intent(this, 隐藏StatusBarAfterFourActivity.class);
+        intent.putExtra(INTENT_FLAG_CHANGE, true);
+        startActivity(intent);
+    }
 
 
 //	WindowManager.LayoutParams.FLAG_FULLSCREEN
@@ -142,6 +194,6 @@ public class LauncherActivity extends AppCompatActivity {
 //	使之生效，需要和View.SYSTEM_UI_FLAG_FULLSCREEN，View.SYSTEM_UI_FLAG_HIDE_NAVIGATION中的一个或两个同时设置。
 //	View.SYSTEM_UI_FLAG_IMMERSIVE_STIKY                      API 19
 //	与上面唯一的区别是, 呼出隐藏的状态栏后不会清除之前设置的View.SYSTEM_UI_FLAG_FULLSCREEN
-	//	或View.SYSTEM_UI_FLAG_HIDE_NAVIGATION标志，在一段时间后将再次隐藏系统栏）
+    //	或View.SYSTEM_UI_FLAG_HIDE_NAVIGATION标志，在一段时间后将再次隐藏系统栏）
 
 }

@@ -10,16 +10,83 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         tools:context=".LauncherActivity">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
-        <Button
-            android:layout_width="wrap_content"
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="adjustPan"
+                android:text="adjustPan"
+                android:textAllCaps="false" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="adjustPanScroll"
+                android:text="adjustPanScroll"
+                android:textAllCaps="false" />
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="adjustPanScrollChange"
+                android:text="adjustPanScrollChange"
+                android:textAllCaps="false" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="otherLauncherFixWindow"
-            android:text="otherLauncherFixWindow"
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="adjustResize"
+                android:text="adjustResize"
+                android:textAllCaps="false" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="adjustResizeScroll"
+                android:text="adjustResizeScroll"
+                android:textAllCaps="false" />
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+            android:onClick="adjustResizeScrollChange"
+            android:text="adjustResizeScrollChange"
             android:textAllCaps="false" />
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="adjustResizeScrollChangeFix"
+                android:text="adjustResizeScrollChangeFix"
+                android:textAllCaps="false" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="otherLauncherFixWindow"
+                android:text="otherLauncherFixWindow"
+                android:textAllCaps="false" />
+
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -27,18 +94,21 @@
                 android:text="otherLauncher"
                 android:textAllCaps="false" />
         </LinearLayout>
+
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="sixMethod"
             android:text="sixMethod"
             android:textAllCaps="false" />
+
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="statusBarTheme"
             android:text="statusBarTheme"
             android:textAllCaps="false" />
+
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -87,17 +157,17 @@
             android:orientation="horizontal">
 
             <Button
-                android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:onClick="beforedanhuanSystemBar"
                 android:text="淡化SystemBar前"
                 android:textAllCaps="false" />
 
             <Button
-                android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:onClick="afterdanhuanSystemBar"
                 android:text="淡化SystemBar后"
                 android:textAllCaps="false" />
@@ -109,38 +179,39 @@
             android:orientation="horizontal">
 
             <Button
-                android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:onClick="beforeyingcangStatusBarlow4"
                 android:text="隐藏StatusBarActivity4.0以前 前"
                 android:textAllCaps="false" />
 
             <Button
-                android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:onClick="afteryingcangStatusBarlow4"
                 android:text="隐藏StatusBarActivity4.0以前 后"
                 android:textAllCaps="false" />
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
             <Button
-                android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:onClick="beforeyingcangStatusBarafter4"
                 android:text="隐藏StatusBarActivity4.0以后 前"
                 android:textAllCaps="false" />
 
             <Button
-                android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:onClick="afteryingcangStatusBarafter4"
                 android:text="隐藏StatusBarActivity4.0以后 后"
                 android:textAllCaps="false" />
@@ -150,44 +221,50 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
+
             <Button
-                android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:onClick="statusBarElMa"
                 android:text="statusBarElMa"
                 android:textAllCaps="false" />
+
             <Button
-                android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:onClick="statusBarElMaFixWindow"
                 android:text="statusBarElMaFixWindow"
                 android:textAllCaps="false" />
 
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
+
             <Button
-                android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:onClick="statusBarWhiteElMa"
                 android:text="statusBarWhiteElMa"
                 android:textAllCaps="false" />
+
             <Button
-                android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:onClick="statusBarElMaWhiteFixWindow"
                 android:text="statusBarElMaWhiteFixWindow"
                 android:textAllCaps="false" />
+
             <Button
-                android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:onClick="statusBarElMaLightMode"
                 android:text="statusBarElMaLightMode"
                 android:textAllCaps="false" />
