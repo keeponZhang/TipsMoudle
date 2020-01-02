@@ -213,6 +213,7 @@ public class MainActivity extends BaseActivity implements DrawerLayout.DrawerLis
                     break;
                 case 14:
                     intent = new Intent(this, WebActivity.class);
+                    intent.putExtra(KeyBoardActivity.INTENT_FIX_KEY_BOARD, true);
                     break;
                 case 15:
                     intent = new Intent(this, ActionBarActivity.class);
@@ -280,6 +281,10 @@ public class MainActivity extends BaseActivity implements DrawerLayout.DrawerLis
                 case 30:
                 intent = new Intent(this, KeyBoardActivity.class);
                 intent.putExtra(KeyBoardActivity.INTENT_FIX_KEY_BOARD, false);
+                    break;
+                case 31:
+                    intent = new Intent(this, WebActivity.class);
+                    intent.putExtra(KeyBoardActivity.INTENT_FIX_KEY_BOARD, false);
                     break;
                 default:
                     break;

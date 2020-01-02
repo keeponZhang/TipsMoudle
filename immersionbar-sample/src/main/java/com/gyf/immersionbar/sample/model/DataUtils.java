@@ -46,6 +46,8 @@ public class DataUtils {
         funBeans.add(new FunBean(context.getString(R.string.text_bar_font_dark), ContextCompat.getDrawable(context, R.mipmap.icon_29)));
         funBeans.add(new FunBean(context.getString(R.string.text_bar_font_light), ContextCompat.getDrawable(context, R.mipmap.icon_30)));
         funBeans.add(new FunBean(context.getString(R.string.text_key_board_problem), ContextCompat.getDrawable(context, R.mipmap.icon_19)));
+        funBeans.add(new FunBean("webview 问题", ContextCompat.getDrawable(context,
+                R.mipmap.icon_19)));
         return funBeans;
     }
 }

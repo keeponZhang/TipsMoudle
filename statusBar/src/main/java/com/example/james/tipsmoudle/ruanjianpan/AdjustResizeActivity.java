@@ -3,6 +3,7 @@ package com.example.james.tipsmoudle.ruanjianpan;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 
 import com.example.james.tipsmoudle.LauncherActivity;
 import com.example.james.tipsmoudle.R;
@@ -29,11 +30,13 @@ public class AdjustResizeActivity extends AppCompatActivity {
         } else {
             setContentView(R.layout.activity_adjust_pan);
         }
+        View viewById = findViewById(R.id.root_layout);
 
         if (fixBug){
             AndroidBug5497Workaround.assistActivity(this);
         }
     }
+
 
 
 }

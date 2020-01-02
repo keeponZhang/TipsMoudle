@@ -111,7 +111,6 @@
             android:windowSoftInputMode="adjustResize" />
         <activity
             android:name="com.gyf.immersionbar.sample.activity.KeyBoardActivity"
-            android:windowSoftInputMode="adjustResize"
             android:configChanges="screenSize|smallestScreenSize|screenLayout|orientation" />
         <activity
             android:name="com.gyf.immersionbar.sample.activity.CoordinatorActivity"

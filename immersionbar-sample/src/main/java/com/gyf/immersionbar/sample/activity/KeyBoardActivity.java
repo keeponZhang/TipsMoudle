@@ -32,6 +32,7 @@ public class KeyBoardActivity extends BaseActivity {
 
     public static final String INTENT_FIX_KEY_BOARD = "FIX_KEY_BOARD";
 
+    //adjustPan 与半透明状态栏没有冲突
     @Override
     protected int getLayoutId() {
         return R.layout.activity_key_board;
@@ -41,15 +42,15 @@ public class KeyBoardActivity extends BaseActivity {
     protected void initImmersionBar() {
         boolean isFix = getIntent().getBooleanExtra(INTENT_FIX_KEY_BOARD, false);
         //
-        // if(isFix){
-        //     ImmersionBar.with(this).titleBar(toolbar)
-        //             //解决软键盘与底部输入框冲突问题
-        //             .keyboardEnable(true)
-        //             .init();
-        // }else{
-        //     ImmersionBar.with(this).titleBar(toolbar)
-        //             .init();
-        // }
+        if(isFix){
+            ImmersionBar.with(this).titleBar(toolbar)
+                    //解决软键盘与底部输入框冲突问题
+                    .keyboardEnable(true)
+                    .init();
+        }else{
+            ImmersionBar.with(this).titleBar(toolbar)
+                    .init();
+        }
 
     }
 

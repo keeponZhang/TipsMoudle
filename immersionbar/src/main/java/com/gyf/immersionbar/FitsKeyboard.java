@@ -43,6 +43,7 @@ class FitsKeyboard implements ViewTreeObserver.OnGlobalLayoutListener {
                 }
             }
         } else {
+            Log.e("TAG", "FitsKeyboard FitsKeyboard else :");
             mChildView = frameLayout.getChildAt(0);
             if (mChildView != null) {
                 if (mChildView instanceof DrawerLayout) {
@@ -98,12 +99,14 @@ class FitsKeyboard implements ViewTreeObserver.OnGlobalLayoutListener {
             int bottom = 0, keyboardHeight, navigationBarHeight = barConfig.isNavigationAtBottom() ? barConfig.getNavigationBarHeight() : barConfig.getNavigationBarWidth();
             boolean isPopup = false;
             Rect rect = new Rect();
-            //获取当前窗口可视区域大小
+            //获取当前窗口可视区域大小(不包括状态栏)
             mDecorView.getWindowVisibleDisplayFrame(rect);
             keyboardHeight = mContentView.getHeight() - rect.bottom;
             if (keyboardHeight != mTempKeyboardHeight) {
                 mTempKeyboardHeight = keyboardHeight;
-                if (!ImmersionBar.checkFitsSystemWindows(mWindow.getDecorView().findViewById(android.R.id.content))) {
+                boolean checkFitsSystemWindows = ImmersionBar.checkFitsSystemWindows(
+                        mWindow.getDecorView().findViewById(android.R.id.content));
+                if (!checkFitsSystemWindows) {
                     if (mChildView != null) {
                         if (mImmersionBar.getBarParams().isSupportActionBar) {
                             keyboardHeight += mImmersionBar.getActionBarHeight() + barConfig.getStatusBarHeight();
@@ -116,6 +119,7 @@ class FitsKeyboard implements ViewTreeObserver.OnGlobalLayoutListener {
                             isPopup = true;
                         }
                         mContentView.setPadding(mPaddingLeft, mPaddingTop, mPaddingRight, bottom);
+                        Log.e("TAG", "FitsKeyboard onGlobalLayout   mContentView.setPadding 调整:");
                     } else {
                         bottom = mImmersionBar.getPaddingBottom();
                         keyboardHeight -= navigationBarHeight;

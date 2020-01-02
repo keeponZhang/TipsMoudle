@@ -36,11 +36,14 @@ public class AndroidBug5497Workaround {
         if (usableHeightNow != usableHeightPrevious) {
             int usableHeightSansKeyboard = mChildOfContent.getRootView().getHeight();
             int heightDifference = usableHeightSansKeyboard - usableHeightNow;
-            Log.e("TAG", "AndroidBug5497Workaround possiblyResizeChildOfContent " +
-                    "heightDifference:"+heightDifference+" usableHeightSansKeyboard="+usableHeightSansKeyboard);
+            Log.e("TAG",
+                    "AndroidBug5497Workaround possiblyResizeChildOfContent usableHeightNow: "+usableHeightNow +
+                    " heightDifference:"+heightDifference+" usableHeightSansKeyboard="+usableHeightSansKeyboard);
             if (heightDifference > (usableHeightSansKeyboard/4)) {
                 // keyboard probably just became visible
                 frameLayoutParams.height = usableHeightSansKeyboard - heightDifference;
+                Log.w("TAG", "AndroidBug5497Workaround possiblyResizeChildOfContent " +
+                        "frameLayoutParams.height:"+(frameLayoutParams.height));
             } else {
                 // keyboard probably just became hidden
                 frameLayoutParams.height = usableHeightSansKeyboard;
@@ -53,6 +56,8 @@ public class AndroidBug5497Workaround {
     private int computeUsableHeight() {
         Rect r = new Rect();
         mChildOfContent.getWindowVisibleDisplayFrame(r);
+        Log.e("TAG", "AndroidBug5497Workaround computeUsableHeight r.bottom :"+(r.bottom )+"  r" +
+                ".top="+( r.top));
         return (r.bottom - r.top);// 全屏模式下： return r.bottom
     }
 
