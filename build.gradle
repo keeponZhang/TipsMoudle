@@ -27,12 +27,13 @@ allprojects {
         maven {
             url 'http://maven.aliyun.com/nexus/content/repositories/releases/'
         }
-        google()
         jcenter()
-        maven {
-            url "http://172.16.18.63:8081/nexus/content/groups/public/"
-        }
         maven { url 'https://jitpack.io' }
+        google()
+       /* maven {
+            url "http://172.16.18.63:8081/nexus/content/groups/public/"
+        }*/
+
     }
     tasks.withType(Javadoc) {
         options {

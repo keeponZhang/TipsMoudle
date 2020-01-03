@@ -1,3 +1,5 @@
 include ':statusBar', ':tree_view_beta', ':nexuslibrary', ':constraintlayoutdemo', ':mvvm'
 include  ':immersionbar', ':immersionbar-components', ':immersionbar-ktx', ':immersionbar-sample'
 include ':amm_sdk_sample'
+include ':transitiondemo'
+include ':baselibrary'
