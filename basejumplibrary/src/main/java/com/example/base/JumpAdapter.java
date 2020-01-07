@@ -22,7 +22,7 @@ public class JumpAdapter extends RecyclerView.Adapter<JumpAdapter.MainViewHolder
 
     @Override
     public MainViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View rootView = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_news_item, parent, false);
+        View rootView = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_news_item_base, parent, false);
         JumpAdapter.MainViewHolder mainViewHolder = new MainViewHolder(rootView);
         return mainViewHolder ;
     }

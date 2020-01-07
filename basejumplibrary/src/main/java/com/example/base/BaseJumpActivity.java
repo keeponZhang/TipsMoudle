@@ -15,7 +15,7 @@ abstract public class BaseJumpActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_jump);
+        setContentView(R.layout.activity_base_jump);
         initData();
     }
 
@@ -27,14 +27,14 @@ abstract public class BaseJumpActivity extends AppCompatActivity {
         mainAdapter.setOnItemClickListener(new JumpAdapter.onItemClickListener() {
             @Override
             public void onItemClick(int position) {
-                onItemClick(position);
+                onRecyclerviewItemClick(position);
             }
         });
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(mainAdapter);
     }
 
-    abstract protected void onItemClick(int poisiton);
+    abstract protected void onRecyclerviewItemClick(int poisiton);
 
     abstract protected void setData(List<String> titles);
 }
